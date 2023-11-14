@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<link rel="stylesheet" href="../static/css/home.css" th:href="@{/css/home.css}">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Assignment3</title>
+</head>
+<body>
+<div id="div1">
+    <h1>Stadium Booking</h1>
+    <a href="/login">Login Page</a>&nbsp;&nbsp;
+    <a href="/registration">Registration Page</a>
+    <div sec:authorize="isAuthenticated()">
+        <a href="/addTicket">Add Ticket</a>
+
+        <a th:href="@{/view}">View the page</a>
+        <br>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Logout" style="background-color: navy; color: white">
+        </form>
+    </div>
+</div>
+
+<div>
+    <img th:src="@{'https://cricketaddictor.com/wp-content/uploads/2021/03/IPL-2021-Schedule-Tickets-Auction-Teams-Venue-Starting-Date-1024x576.jpg'}" width="100%" height="600">
+</div>
+</body>
+</html>

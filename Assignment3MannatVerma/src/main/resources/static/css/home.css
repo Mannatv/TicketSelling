@@ -1,0 +1,17 @@
+body{
+    background-color: lavenderblush;
+}
+#div1{
+    display: flex;
+    align-items: center;
+}
+h1, a {
+    margin-right: 20px;
+}
+h1{
+    color: navy;
+    font-style: italic;
+}
+img{
+    border-radius: 5%;
+}

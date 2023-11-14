@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<link rel="stylesheet" href="../static/css/edit.css" th:href="@{/css/edit.css}">
+<head>
+  <meta charset="UTF-8">
+  <title>View Page</title>
+</head>
+<body>
+<h1 style="text-align: center; color: orange">View the Table</h1>
+<div style="text-align: center">
+  <table border="1" style="width: 100%; padding: 2px;">
+    <tr>
+      <th>TicketID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>SeatNumber</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Option1</th>
+      <th>Option2</th>
+    </tr>
+
+    <tr th:each="p: ${tickets}">
+      <td th:text="${p.id}"></td>
+      <td th:text="${p.name}"></td>
+      <td th:text="${p.price}"></td>
+      <td th:text="${p.seatNumber}"></td>
+      <td th:text="${p.date}"></td>
+      <td th:text="${p.time}"></td>
+      <td><a th:href="@{/edit/{id}(id=${p.id})}">EDIT</a></td>
+      <td><a th:href="@{/delete/{id}(id=${p.id})}">DELETE</a></td>
+    </tr>
+  </table>
+</div>
+<br>
+<a href="/">Root</a>
+<br>
+<a th:href="@{/addTicket}">Add Drink</a>
+<br>
+</body>
+</html>

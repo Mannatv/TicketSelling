@@ -1,0 +1,11 @@
+h1{
+    color: navy;
+}
+body{
+    background-image: url("https://assets.gqindia.com/photos/642a7596bbd5d6aa01c70d1f/16:9/pass/Cricket%20Ball.jpg");
+    font-weight: bold;
+}
+.button{
+    background-color: navy;
+    color: whitesmoke;
+}

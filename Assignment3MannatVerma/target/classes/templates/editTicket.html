@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="../static/css/add.css" th:href="@{/css/add.css}">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Ticket</title>
+</head>
+<body>
+<h1>Edit Ticket Page</h1>
+<form th:action="@{/editTicket}" method="post" th:object="${ticket}">
+  <input type="hidden" th:field="*{id}">
+  Name: <input type="text" th:field="*{name}"><br>
+  price:<input type="number" th:field="*{price}"> <br>
+  seatNumber:   <input type="text" th:field="*{seatNumber}"> <br>
+  Date: <input type="date" th:field="*{date}"> <br>
+  Time: <input type="time" th:field="*{time}"><br>
+  <input type="submit" value="Edit Ticket">
+  <br><br>
+  <a href="/">Home Page</a>
+</form>
+</body>
+</html>

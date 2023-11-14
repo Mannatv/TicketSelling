@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="../static/css/login.css" th:href="@{css/login.css}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    <h1>Stadium Booking</h1>
+    <a href="/">Home Page</a>&nbsp;&nbsp;
+    <a href="/registration">Registration Page</a>
+</div>
+<div id="bodyl">
+    <div th:if="${param.failed}">
+        <!-- only appear if local host 8080 failed-->
+        the username or password is incorrect
+    </div>
+    <div th:if="${param.logout}">
+        <!-- only appear if local host 8080 logout-->
+        the username or password is incorrect
+    </div>
+    <h2>Login Page</h2>
+    <form th:action="@{/login}" method="post">
+        Username <input type="text" name="username" placeholder="Username" autofocus="autofocus">
+        <br><br>
+        Password <input type="password" name="password" placeholder="Password">
+        <br><br>
+        <input type="submit" value="Login" id="logins">
+    </form>
+</div>
+</body>
+</html>
